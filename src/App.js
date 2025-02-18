@@ -114,6 +114,7 @@ const App = () => {
   }
   const listRef = useRef(null);
   useEffect(() => {
+    // eslint-disable-next-line
     getPhotos(1, true);
     const scrollEvent = () => {
       const height = (listRef.current.offsetTop + listRef.current.offsetHeight) - window.innerHeight;
