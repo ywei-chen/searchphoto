@@ -25,11 +25,11 @@ const SearchBox = ({ text, onSearchHandler }) => {
   return (<>
     <div className='d-flex align-items-center justify-content-center my-4'>
       <label className='my-2 mx-2 h4' htmlFor='search'>搜尋欄</label>
-      <input id='search' className="form-control w-75" type="text" defaultValue={text} onKeyDown={onSearchHandler} />
+      <input id='search' className="form-control w-75" type="text" placeholder='關鍵字搜尋...' defaultValue={text} onKeyDown={onSearchHandler} />
     </div>
   </>)
 }
-const Loading = ({ isLoading }) => {
+const Loading = ({isLoading}) => {
   return (<div className='position-fixed top-0 start-0 bottom-0 end-0 z-3 bg-white bg-opacity-50 justify-content-center align-items-center'
     style={{ display: isLoading ? 'flex' : 'none' }}>
 
@@ -58,11 +58,11 @@ const Loading = ({ isLoading }) => {
 }
 
 const App = () => {
-  const [text, setText] = useState('請使用英文單字搜尋...');
+  const [text, setText] = useState(null);
   const [jasonData, setjasonData] = useState([]);
   const [xRatelimit, setxRatelimit] = useState(50);
   const [isLoading, setIsLoaing] = useState(false);
-  const [photoUrl, setPhotoUrl] = useState('');
+  const [photoUrl, setPhotoUrl] = useState(null);
   const currentPage = useRef(1);
   const isLoadindRef = useRef(false);
   const modalRef = useRef(null);
